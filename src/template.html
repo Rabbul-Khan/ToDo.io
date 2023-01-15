@@ -5,9 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./dist/main.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>ToDo.io</title>
   </head>
   <body>
-    <h1>ToDo.io</h1>
+    <header>
+      <div class="left-icons">
+        <div class="menu icon material-icons">menu</div>
+        <div class="home icon material-icons">home</div>
+        <div class="search icon material-icons">search</div>
+      </div>
+      <div class="right-icons">
+        <div class="add icon material-icons">add</div>
+        <div class="person icon material-icons">person</div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <div class="date-container">
+        <div class="day">Today</div>
+        <div class="date">Sun 15 Jan</div>
+      </div>
+
+      <div class="task-container"></div>
+
+      <div class="modal">
+        <div class="modal-content">
+          <form onsubmit="return false" class="form-add-task">
+            <label for="taskName">Task</label>
+            <input type="text" name="taskName" id="taskName" />
+            <button class="submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="add-task-container">
+        <div class="add icon material-icons">add</div>
+        <button class="add-task-btn">Add task</button>
+        <div class="task-one"></div>
+      </div>
+    </div>
   </body>
 </html>

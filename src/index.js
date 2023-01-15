@@ -1,4 +1,6 @@
-import { add } from "./add.js";
 import "./main.css";
+import { addTaskButton } from "./addTaskButton";
+import { submit } from "./submit";
 
-alert(add(5, 8));
+addTaskButton();
+submit();
