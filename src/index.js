@@ -1,6 +1,6 @@
 import "./main.css";
 import { addTaskButton } from "./addTaskButton";
-import { submit } from "./submit";
+import { submit } from "./submitButton";
 
 addTaskButton();
 submit();

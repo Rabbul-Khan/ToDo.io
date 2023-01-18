@@ -5,6 +5,5 @@ export const addTaskButton = () => {
 
   addTaskBtnNode.addEventListener("click", () => {
     toggleModal();
-    addTaskContainer.style.display = "none";
   });
 };

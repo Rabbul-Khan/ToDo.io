@@ -27,11 +27,11 @@ header {
   display: flex;
 }
 
-.date-container .day {
+.date-container .today-day {
   font-size: 2rem;
 }
 
-.date-container .date {
+.date-container .today-date {
   padding-top: 0.8rem;
   padding-left: 0.5rem;
 }
@@ -45,6 +45,11 @@ header {
 }
 
 .task-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-add-task {
   display: flex;
   flex-direction: column;
 }

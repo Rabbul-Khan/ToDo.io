@@ -26,26 +26,34 @@
 
     <div class="main-container">
       <div class="date-container">
-        <div class="day">Today</div>
-        <div class="date">Sun 15 Jan</div>
+        <!-- Need to set dynamic date functionality here -->
+        <div class="today-day">Today</div>
+        <div class="today-date">Sun 15 Jan</div>
       </div>
 
       <div class="task-container"></div>
 
-      <div class="modal">
-        <div class="modal-content">
-          <form onsubmit="return false" class="form-add-task">
-            <label for="taskName">Task</label>
-            <input type="text" name="taskName" id="taskName" />
-            <button class="submit-btn">Submit</button>
-          </form>
-        </div>
-      </div>
-
+      <!-- Refactor this to just a button -->
       <div class="add-task-container">
         <div class="add icon material-icons">add</div>
         <button class="add-task-btn">Add task</button>
         <div class="task-one"></div>
+      </div>
+
+      <div class="modal">
+        <div class="modal-content">
+          <form onsubmit="return false" class="form-add-task">
+            <span>
+              <label for="taskName">Task</label>
+              <input type="text" name="taskName" id="taskName" />
+            </span>
+            <span>
+              <label for="due-date">Due date:</label>
+              <input type="date" id="due-date" name="due-date" />
+            </span>
+            <button class="submit-btn">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>
