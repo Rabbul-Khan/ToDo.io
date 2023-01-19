@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./dist/main.js"></script>
+    <!-- <script src="./dist/main.js"></script> -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -12,7 +12,7 @@
     <title>ToDo.io</title>
   </head>
   <body>
-    <header>
+    <nav>
       <div class="left-icons">
         <div class="menu icon material-icons">menu</div>
         <div class="home icon material-icons">home</div>
@@ -22,21 +22,23 @@
         <div class="add icon material-icons">add</div>
         <div class="person icon material-icons">person</div>
       </div>
-    </header>
+    </nav>
 
     <div class="main-container">
       <div class="date-container">
         <!-- Need to set dynamic date functionality here -->
         <div class="today-day">Today</div>
-        <div class="today-date">Sun 15 Jan</div>
+        <div class="today-date"></div>
       </div>
 
       <div class="task-container"></div>
 
       <!-- Refactor this to just a button -->
       <div class="add-task-container">
-        <div class="add icon material-icons">add</div>
-        <button class="add-task-btn">Add task</button>
+        <button class="add-task-btn">
+          <div class="add icon material-icons"></div>
+          Add task
+        </button>
         <div class="task-one"></div>
       </div>
 
