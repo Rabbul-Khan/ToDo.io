@@ -59,6 +59,7 @@ nav .right-icons > * {
 
 button div::before {
   content: "add";
+  padding-right: 0.5rem;
 }
 
 button:hover div:before {
@@ -78,6 +79,26 @@ button:hover div:before {
   flex-direction: column;
 }
 
+.task {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+}
+
+.task.high {
+  background: lightcoral;
+}
+
+.task.mid {
+  background: lightyellow;
+}
+
+.task.low {
+  background: lightgreen;
+}
+
 .form-add-task {
   display: flex;
   flex-direction: column;
@@ -86,4 +107,43 @@ button:hover div:before {
 
 .form-add-task > * {
   padding: 1rem;
+}
+
+.radio input {
+  width: auto;
+  height: 100%;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 2px;
+  background: #a1a1a1;
+  font-size: 1rem;
+  transition: all 100ms linear;
+}
+
+.radio input:checked {
+  color: black;
+  box-shadow: 0 1px 1px #0000002e;
+  text-shadow: 0 1px 0px #79485f7a;
+}
+
+.radio #high:checked {
+  background: lightcoral;
+}
+
+.radio #mid:checked {
+  background: lightyellow;
+}
+
+.radio #low:checked {
+  background: lightgreen;
+}
+
+.radio input:before {
+  content: attr(label);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }

@@ -39,7 +39,6 @@
           <div class="add icon material-icons"></div>
           Add task
         </button>
-        <div class="task-one"></div>
       </div>
 
       <div class="modal">
@@ -50,8 +49,28 @@
               <input type="text" name="taskName" id="taskName" />
             </span>
             <span>
+              <label for="taskDescription">Description</label>
+              <textarea
+                name="taskDescription"
+                id="taskDescription"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </span>
+            <span>
               <label for="due-date">Due date:</label>
               <input type="date" id="due-date" name="due-date" />
+            </span>
+            <span class="radio">
+              <input
+                label="High"
+                type="radio"
+                id="high"
+                name="priority"
+                checked="true"
+              />
+              <input label="Mid" type="radio" id="mid" name="priority" />
+              <input label="Low" type="radio" id="low" name="priority" />
             </span>
             <button class="submit-btn">Submit</button>
           </form>
