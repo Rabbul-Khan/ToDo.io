@@ -9,6 +9,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>ToDo.io</title>
   </head>
   <body>
@@ -45,21 +51,34 @@
         <div class="modal-content">
           <form onsubmit="return false" class="form-add-task">
             <span>
-              <label for="taskName">Task</label>
-              <input type="text" name="taskName" id="taskName" />
+              <!-- <label for="taskName">Task</label> -->
+              <input
+                type="text"
+                name="taskName"
+                id="taskName"
+                class="input-task-name"
+                placeholder="Task name"
+              />
             </span>
             <span>
-              <label for="taskDescription">Description</label>
+              <!-- <label for="taskDescription">Description</label> -->
               <textarea
                 name="taskDescription"
                 id="taskDescription"
                 cols="30"
                 rows="10"
+                class="input-task-description"
+                placeholder="Description"
               ></textarea>
             </span>
             <span>
-              <label for="due-date">Due date:</label>
-              <input type="date" id="due-date" name="due-date" />
+              <!-- <label for="due-date">Due date:</label> -->
+              <input
+                type="date"
+                id="due-date"
+                name="due-date"
+                class="input-date"
+              />
             </span>
             <span class="radio">
               <input

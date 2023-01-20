@@ -1,7 +1,7 @@
 import { task } from "./task.js";
 
-export const taskAdd = (title, dueDate, priority) => {
-  let newTask = new task(title, dueDate, priority);
+export const taskAdd = (title, description, dueDate, priority) => {
+  let newTask = new task(title, description, dueDate, priority);
   let taskContainer = document.getElementsByClassName("task-container")[0];
   let newTaskNode = document.createElement("div");
   newTaskNode.classList.add("task");
@@ -13,6 +13,12 @@ export const taskAdd = (title, dueDate, priority) => {
     newTaskNode.classList.add("low");
   }
   newTaskNode.textContent =
-    newTask.title + " " + newTask.dueDate + " " + priority;
+    newTask.title +
+    " " +
+    newTask.description +
+    " " +
+    newTask.dueDate +
+    " " +
+    newTask.priority;
   taskContainer.appendChild(newTaskNode);
 };

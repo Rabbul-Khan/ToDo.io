@@ -2,6 +2,7 @@ import { taskAdd } from "./taskAdd";
 import { toggleModal } from "./toggleModal";
 import { getDate } from "./getDate";
 import { getPriority } from "./getPriority";
+import { getDescription } from "./getDescription";
 
 export const submit = () => {
   const submitButton = document.getElementsByClassName("submit-btn")[0];
@@ -9,7 +10,8 @@ export const submit = () => {
     let taskName = document.getElementById("taskName").value;
     let dueDate = getDate();
     let priority = getPriority();
-    taskAdd(taskName, dueDate, priority);
+    let description = getDescription();
+    taskAdd(taskName, description, dueDate, priority);
     toggleModal();
   });
 };
