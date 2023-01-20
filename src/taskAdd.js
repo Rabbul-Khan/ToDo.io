@@ -5,9 +5,9 @@ export const taskAdd = (title, description, dueDate, priority) => {
   let taskContainer = document.getElementsByClassName("task-container")[0];
   let newTaskNode = document.createElement("div");
   newTaskNode.classList.add("task");
-  if (priority === "high") {
+  if (priority === "High") {
     newTaskNode.classList.add("high");
-  } else if (priority === "mid") {
+  } else if (priority === "Mid") {
     newTaskNode.classList.add("mid");
   } else {
     newTaskNode.classList.add("low");

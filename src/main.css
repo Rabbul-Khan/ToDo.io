@@ -6,78 +6,68 @@
   margin: 0;
 }
 
-html,
-button,
-*::placeholder {
+:root {
+  --main-bg-color: #ffffff;
+  --secondary-bg-color: #79a8ff;
+  --main-font-color: #000000;
+  --main-font-color-light: #a1a1a1;
+  --high-priority-color: #fb6962;
+  --mid-priority-color: #fcfc99;
+  --low-priority-color: #79de79;
+  --border-rad: 0.5rem;
+}
+
+/* This selector sets the style on every element */
+html * {
   font-family: "Roboto", sans-serif;
 }
 
 body {
-  background: #fcfbf4;
+  background: var(--main-bg-color);
 }
 
-nav {
-  background-color: #79a8ff;
+.nav {
+  background-color: var(--secondary-bg-color);
   display: flex;
   justify-content: space-between;
-  padding: 1rem 3rem;
+  padding: 1rem 1.5rem;
 }
 
-nav .left-icons > * {
+.nav__icons-left-container > * {
   padding-right: 1rem;
 }
 
-nav .right-icons > * {
+.nav__icons-right-container > * {
   padding-left: 1rem;
 }
 
+.icon {
+  user-select: none;
+}
+
 .main-container {
-  margin: 3.75rem 4.5rem;
-  padding: 2rem 3rem;
+  margin: 3.75rem auto;
+  padding: 0 4rem;
   min-width: 300px;
 }
 
 .date-container {
   display: flex;
   padding-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
-.date-container .today-day {
-  font-size: 1.5rem;
+.date-container__today-day {
   font-weight: bold;
   padding-right: 1rem;
+  user-select: none;
 }
 
-.date-container .today-date {
-  font-size: 1.5rem;
+.date-container__today-date {
   overflow: hidden;
   white-space: nowrap;
-}
-
-.add-task-container button {
-  cursor: pointer;
-  background: none;
-  font-size: 1rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button div::before {
-  content: "add";
-  padding-right: 0.5rem;
-}
-
-button:hover div:before {
-  content: "add_circle";
-}
-
-.add-task-container button:hover {
-  color: #79a8ff;
-}
-
-.modal {
-  display: none;
+  color: var(--main-font-color-light);
+  user-select: none;
 }
 
 .task-container {
@@ -86,115 +76,147 @@ button:hover div:before {
 }
 
 .task {
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
-  margin: 1rem;
-  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--border-rad);
 }
 
 .task.high {
-  background: lightcoral;
+  background: var(--high-priority-color);
 }
 
 .task.mid {
-  background: lightyellow;
+  background: var(--mid-priority-color);
 }
 
 .task.low {
-  background: lightgreen;
+  background: var(--low-priority-color);
 }
 
-.modal-content {
-  border: 1px solid black;
-  border-radius: 0.5rem;
+.add-task-btn {
+  cursor: pointer;
+  background: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  user-select: none;
 }
 
-.form-add-task {
+.add-task-btn__icons-add::before {
+  content: "add";
+  padding-right: 0.25rem;
+  color: var(--secondary-bg-color);
+}
+
+.add-task-btn:hover {
+  color: var(--secondary-bg-color);
+}
+
+.add-task-btn:hover .add-task-btn__icons-add::before {
+  content: "add_circle";
+}
+
+.modal {
+  display: none;
+}
+
+.modal__add-task-form {
+  border: 1px solid var(--main-font-color-light);
+  border-radius: var(--border-rad);
   display: flex;
   flex-direction: column;
 }
 
-.form-add-task > * {
-  padding: 0.5rem;
+.modal__add-task-form:focus-within {
+  border: 1px solid var(--main-font-color);
 }
 
-.input-task-name,
-.input-task-description,
-.input-date,
-.submit-btn {
-  width: 100%;
+.modal__add-task-form > * {
+  margin: 1rem 1rem 0 1rem;
   font-size: 1rem;
-  padding: 0.5rem;
-  background: #fffcfc;
 }
 
-.input-date {
-  width: 50%;
-}
-
-.input-task-name:focus,
-.input-task-description:focus,
-.input-date:focus {
+.form__input-task-name:focus,
+.form__input-task-description:focus,
+.form__input-due-date:focus {
   outline: none;
 }
 
-.input-task-description {
+.form__input-task-description {
   resize: none;
 }
 
+/* this is to remove a preset style */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px yellow inset;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
 }
 
-.submit-btn {
-  margin: 0 auto;
-  margin-bottom: 0.5rem;
-  background: #79a8ff;
-  width: 50%;
-  cursor: pointer;
-  border-radius: 0.5rem;
+.form__sub-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.submit-btn:hover {
-  background: #3d81ff;
-}
-
-.radio input {
-  width: auto;
-  height: 100%;
+.form__input-priority {
   appearance: none;
   outline: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
   color: white;
-  border-radius: 2px;
-  background: #a1a1a1;
-  font-size: 1rem;
+  border-radius: var(--border-rad);
+  background: var(--main-font-color-light);
   transition: all 100ms linear;
 }
 
-.radio input:checked {
+.form__input-priority:before {
+  content: attr(label);
+  text-align: center;
+}
+
+.form__input-priority:checked {
   color: black;
   box-shadow: 0 1px 1px #0000002e;
   text-shadow: 0 1px 0px #79485f7a;
 }
 
-.radio #high:checked {
-  background: lightcoral;
+.form__input-priority--high:checked {
+  background: var(--high-priority-color);
 }
 
-.radio #mid:checked {
-  background: lightyellow;
+.form__input-priority--mid:checked {
+  background: var(--mid-priority-color);
 }
 
-.radio #low:checked {
-  background: lightgreen;
+.form__input-priority--low:checked {
+  background: var(--low-priority-color);
 }
 
-.radio input:before {
-  content: attr(label);
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+.modal__btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.modal__btn-container .btn {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.modal__btn-submit {
+  background: var(--secondary-bg-color);
+}
+
+.modal__btn-submit:hover {
+  background: #3d81ff;
+}
+
+.modal__btn-cancel {
+  background: var(--main-font-color-light);
+}
+
+.modal__btn-cancel:hover {
+  background: #888888;
 }
