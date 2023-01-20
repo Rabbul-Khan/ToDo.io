@@ -10,10 +10,10 @@
   --main-bg-color: #ffffff;
   --secondary-bg-color: #79a8ff;
   --main-font-color: #000000;
-  --main-font-color-light: #a1a1a1;
-  --high-priority-color: #fb6962;
-  --mid-priority-color: #fcfc99;
-  --low-priority-color: #79de79;
+  --main-font-color-light: #999999;
+  --high-priority-color: #ffa09b;
+  --mid-priority-color: #ffff9d;
+  --low-priority-color: #a9ffa9;
   --border-rad: 0.5rem;
 }
 
@@ -76,9 +76,20 @@ body {
 }
 
 .task {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   margin-bottom: 0.5rem;
   border-radius: var(--border-rad);
+  gap: 0.25rem;
+}
+
+.task__title {
+  font-weight: 500;
+}
+
+.task__description {
+  font-size: 0.9rem;
 }
 
 .task.high {
@@ -173,6 +184,10 @@ input:-webkit-autofill {
   text-align: center;
 }
 
+.form__input-priority:hover {
+  background: #888888;
+}
+
 .form__input-priority:checked {
   color: black;
   box-shadow: 0 1px 1px #0000002e;
@@ -207,6 +222,7 @@ input:-webkit-autofill {
 
 .modal__btn-submit {
   background: var(--secondary-bg-color);
+  transition: 0.3s;
 }
 
 .modal__btn-submit:hover {
@@ -215,6 +231,7 @@ input:-webkit-autofill {
 
 .modal__btn-cancel {
   background: var(--main-font-color-light);
+  transition: 0.3s;
 }
 
 .modal__btn-cancel:hover {
