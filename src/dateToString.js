@@ -1,5 +1,9 @@
-export const dateToString = (dueDate) => {
-  let dueDateString = dueDate.toString();
-  let dueDateArray = dueDateString.split(" ");
-  return dueDateArray[1] + " " + dueDateArray[2] + " " + dueDateArray[3];
+// Converts the Date object to a string and outputs the date in the format: mmm/dd/yyyy.
+
+export const dateToString = (date) => {
+  let dateString = date.toString();
+  let dateStringArray = dateString.split(" ");
+  return (
+    dateStringArray[1] + " " + dateStringArray[2] + " " + dateStringArray[3]
+  );
 };

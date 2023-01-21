@@ -1,3 +1,5 @@
+// This function allows the text area box (description) to dynamically increase in height to fit the content if required.
+
 export const textAreaResize = () => {
   const txHeight = 23;
   const tx = document.getElementsByTagName("textarea");

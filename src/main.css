@@ -63,7 +63,7 @@ body {
   user-select: none;
 }
 
-.date-container__today-date {
+.date-container__current-date {
   overflow: hidden;
   white-space: nowrap;
   color: var(--main-font-color-light);
@@ -75,7 +75,7 @@ body {
   flex-direction: column;
 }
 
-.task {
+.task-container__task {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -84,23 +84,27 @@ body {
   gap: 0.25rem;
 }
 
-.task__title {
+.task-container__task-title {
   font-weight: 500;
+  flex: 1;
+  min-height: 0;
 }
 
-.task__description {
+.task-container__task-description {
   font-size: 0.9rem;
+  flex: 1;
+  min-height: 0;
 }
 
-.task.high {
+.task-container__task-priority--high {
   background: var(--high-priority-color);
 }
 
-.task.mid {
+.task-container__task-priority--mid {
   background: var(--mid-priority-color);
 }
 
-.task.low {
+.task-container__task-priority--low {
   background: var(--low-priority-color);
 }
 
@@ -144,7 +148,6 @@ body {
 
 .modal__add-task-form > * {
   margin: 1rem 1rem 0 1rem;
-  font-size: 1rem;
 }
 
 .form__input-task-name:focus,
@@ -166,6 +169,16 @@ input:-webkit-autofill {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.form__input-due-date {
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: var(--border-rad);
+  padding: 0.5rem 1rem;
+}
+
+.form__input-due-date:focus {
+  border: 1.95px solid #0059ff;
 }
 
 .form__input-priority {

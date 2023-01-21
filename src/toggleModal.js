@@ -1,6 +1,8 @@
+//Makes the modal visible and hides the add task button and vice versa
+
 export const toggleModal = () => {
-  let modalNode = document.getElementsByClassName("modal")[0];
-  let addTaskBtn = document.getElementsByClassName("add-task-btn")[0];
+  const modalNode = document.getElementsByClassName("modal")[0];
+  const addTaskBtn = document.getElementsByClassName("add-task-btn")[0];
 
   if (modalNode.style.display === "block") {
     modalNode.style.display = "none";

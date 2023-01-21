@@ -1,10 +1,12 @@
 import "./main.css";
 import { addTaskButton } from "./addTaskButton";
-import { submit } from "./submitButton";
-import { setTodayDate } from "./setTodayDate";
+import { submitButton } from "./submitButton";
 import { textAreaResize } from "./textAreaResize";
+import { modalCancelButton } from "./modalCancelButton";
+import { setCurrentDate } from "./setCurrentDate";
 
-textAreaResize();
-setTodayDate();
+setCurrentDate();
 addTaskButton();
-submit();
+textAreaResize();
+submitButton();
+modalCancelButton();

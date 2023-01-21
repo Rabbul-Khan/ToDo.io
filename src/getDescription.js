@@ -1,7 +1,9 @@
+// Returns the description set for the task.
+
 export const getDescription = () => {
-  let descriptionNode = document.getElementsByClassName(
+  const descriptionNode = document.getElementsByClassName(
     "form__input-task-description"
   )[0];
-  let description = descriptionNode.value;
+  const description = descriptionNode.value;
   return description;
 };

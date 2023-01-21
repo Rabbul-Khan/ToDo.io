@@ -1,20 +1,24 @@
-import { taskAdd } from "./taskAdd";
-import { toggleModal } from "./toggleModal";
-import { getDate } from "./getDate";
-import { getPriority } from "./getPriority";
-import { getDescription } from "./getDescription";
+// Once the submit button is clicked, the new task is created and the form modal is closed.
 
-export const submit = () => {
+import { getTaskName } from "./getTaskName";
+import { getDescription } from "./getDescription";
+import { getDueDate } from "./getDueDate";
+import { getPriority } from "./getPriority";
+import { addTask } from "./addTask";
+import { toggleModal } from "./toggleModal";
+
+export const submitButton = () => {
   const submitButton = document.getElementsByClassName("modal__btn-submit")[0];
   submitButton.addEventListener("click", () => {
-    let taskName = document.getElementsByClassName("form__input-task-name")[0]
-      .value;
-    let dueDate = getDate();
-    let priority = getPriority();
-    let description = getDescription();
-    taskAdd(taskName, description, dueDate, priority);
+    const taskName = getTaskName();
+    const description = getDescription();
+    const dueDate = getDueDate();
+    const priority = getPriority();
+    addTask(taskName, description, dueDate, priority);
     toggleModal();
-    let formNode = document.getElementsByClassName("modal__add-task-form")[0];
+
+    // Resets the previous inputs to the form. If the reset function is not used, then the previous task name, description etc. remain in the input fields when a new form is opened.
+    const formNode = document.getElementsByClassName("modal__add-task-form")[0];
     formNode.reset();
   });
 };
