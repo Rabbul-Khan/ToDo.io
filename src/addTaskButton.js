@@ -5,6 +5,6 @@ import { toggleModal } from "./toggleModal";
 export const addTaskButton = () => {
   const addTaskBtnNode = document.getElementsByClassName("add-task-btn")[0];
   addTaskBtnNode.addEventListener("click", () => {
-    toggleModal();
+    toggleModal("main-container__modal");
   });
 };

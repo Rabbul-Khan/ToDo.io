@@ -8,7 +8,8 @@
 
 :root {
   --main-bg-color: #ffffff;
-  --secondary-bg-color: #79a8ff;
+  --secondary-bg-color: #0095ff;
+  --secondary-bg-color-lighter: #c0e5f9;
   --main-font-color: #000000;
   --main-font-color-light: #999999;
   --high-priority-color: #ffa09b;
@@ -46,9 +47,17 @@ body {
 }
 
 .main-container {
+  display: flex;
+}
+
+.main-container__sidebar {
+  display: none;
+}
+
+.main-container__main-content {
+  width: 100%;
   margin: 3.75rem auto;
-  padding: 0 4rem;
-  min-width: 300px;
+  padding: 0 min(20rem, 15%);
 }
 
 .date-container {
@@ -115,7 +124,8 @@ body {
   background: var(--low-priority-color);
 }
 
-.add-task-btn {
+.add-task-btn,
+.add-project-btn {
   cursor: pointer;
   background: none;
   font-size: 1rem;
@@ -124,17 +134,20 @@ body {
   user-select: none;
 }
 
-.add-task-btn__icons-add::before {
+.add-task-btn__icons-add::before,
+.add-project-btn__icons-add::before {
   content: "add";
   padding-right: 0.25rem;
   color: var(--secondary-bg-color);
 }
 
-.add-task-btn:hover {
+.add-task-btn:hover,
+.add-project-btn:hover {
   color: var(--secondary-bg-color);
 }
 
-.add-task-btn:hover .add-task-btn__icons-add::before {
+.add-task-btn:hover .add-task-btn__icons-add::before,
+.add-project-btn:hover .add-project-btn__icons-add::before {
   content: "add_circle";
 }
 
@@ -142,24 +155,25 @@ body {
   display: none;
 }
 
-.modal__add-task-form {
+.form {
   border: 1px solid var(--main-font-color-light);
   border-radius: var(--border-rad);
   display: flex;
   flex-direction: column;
 }
 
-.modal__add-task-form:focus-within {
+.form:focus-within {
   border: 1px solid var(--main-font-color);
 }
 
-.modal__add-task-form > * {
+.form > * {
   margin: 1rem 1rem 0 1rem;
 }
 
 .form__input-task-name:focus,
 .form__input-task-description:focus,
-.form__input-due-date:focus {
+.form__input-due-date:focus,
+.form__input-project-name:focus {
   outline: none;
 }
 
@@ -261,4 +275,40 @@ input:-webkit-autofill {
 .modal__btn-cancel:hover {
   background: #888888;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+@media screen and (min-width: 800px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 300px auto;
+  }
+
+  .main-container__sidebar {
+    display: block;
+    background: var(--secondary-bg-color-lighter);
+    min-height: calc(100vh - 60px);
+  }
+
+  .sidebar__project-container {
+    max-width: 80%;
+    margin: 2rem auto;
+  }
+
+  .sidebar__project-container > * {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: medium;
+  }
+
+  .sidebar__modal {
+    display: none;
+  }
+
+  .form__input-project-name {
+    background: var(--secondary-bg-color-lighter);
+    margin: 0.5rem;
+  }
 }
