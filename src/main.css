@@ -96,6 +96,13 @@ body {
   min-height: 0;
 }
 
+.task-container__icons-delete {
+  flex: 1;
+  min-height: 0;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
 .task-container__task-priority--high {
   background: var(--high-priority-color);
 }
@@ -186,10 +193,10 @@ input:-webkit-autofill {
   outline: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  color: white;
+  color: var(--main-font-color);
   border-radius: var(--border-rad);
-  background: var(--main-font-color-light);
-  transition: all 100ms linear;
+  border: 1px solid var(--main-font-color-light);
+  transition: all 300ms linear;
 }
 
 .form__input-priority:before {
@@ -198,13 +205,16 @@ input:-webkit-autofill {
 }
 
 .form__input-priority:hover {
-  background: #888888;
+  border: 1.95px solid var(--main-font-color);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: all 100ms linear;
 }
 
 .form__input-priority:checked {
   color: black;
   box-shadow: 0 1px 1px #0000002e;
   text-shadow: 0 1px 0px #79485f7a;
+  border: none;
 }
 
 .form__input-priority--high:checked {
@@ -240,6 +250,7 @@ input:-webkit-autofill {
 
 .modal__btn-submit:hover {
   background: #3d81ff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .modal__btn-cancel {
@@ -249,4 +260,5 @@ input:-webkit-autofill {
 
 .modal__btn-cancel:hover {
   background: #888888;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

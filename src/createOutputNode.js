@@ -14,6 +14,14 @@ export const createOutputNode = (title, description, priority) => {
   descriptionNode.classList.add("task-container__task-description");
   descriptionNode.textContent = description;
 
+  const deleteIconNode = document.createElement("div");
+  deleteIconNode.classList.add(
+    "task-container__icons-delete",
+    "icon",
+    "material-icons"
+  );
+  deleteIconNode.textContent = "delete";
+
   if (priority === "High") {
     newTaskNode.classList.add("task-container__task-priority--high");
   } else if (priority === "Mid") {
@@ -22,6 +30,6 @@ export const createOutputNode = (title, description, priority) => {
     newTaskNode.classList.add("task-container__task-priority--low");
   }
 
-  newTaskNode.append(titleNode, descriptionNode);
+  newTaskNode.append(titleNode, descriptionNode, deleteIconNode);
   taskContainerNode.appendChild(newTaskNode);
 };
