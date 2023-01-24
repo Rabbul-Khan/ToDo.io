@@ -1,6 +1,6 @@
 // Returns the task name set for the task.
 
-export const getTaskName = () => {
+export const getTaskName = (name) => {
   const taskNameNode = document.getElementsByClassName(
     "form__input-task-name"
   )[0];

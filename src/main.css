@@ -60,6 +60,14 @@ body {
   padding: 0 min(20rem, 15%);
 }
 
+.task-list-container {
+  display: none;
+}
+
+.task-list-container.active {
+  display: block;
+}
+
 .date-container {
   display: flex;
   padding-bottom: 1rem;
@@ -294,13 +302,24 @@ input:-webkit-autofill {
     margin: 2rem auto;
   }
 
-  .sidebar__project-container > * {
+  .project-container__project-name {
+    color: var(--main-font-color);
     display: flex;
     padding: 1rem;
     align-items: center;
     gap: 0.75rem;
     font-size: 1.15rem;
     font-weight: medium;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .project-container__project.active {
+    background-color: var(--secondary-bg-color);
+  }
+
+  .project-container__project.active .project-container__project-name {
+    color: var(--main-bg-color);
   }
 
   .sidebar__modal {

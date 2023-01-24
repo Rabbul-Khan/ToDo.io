@@ -1,8 +1,8 @@
 // Task Class.
 
-export class task {
-  constructor(title, description, dueDate, priority) {
-    this.title = title;
+export class Task {
+  constructor(name, description, dueDate, priority) {
+    this.name = name;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;

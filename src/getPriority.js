@@ -1,10 +1,9 @@
 // Returns the priority set for the task.
 
-export const getPriority = () => {
-  const priorities = document.querySelectorAll('input[name="priority"]');
-  for (let i = 0; i < priorities.length; i++) {
-    if (priorities[i].checked) {
-      return priorities[i].getAttribute("label");
+export const getPriority = (priorityList) => {
+  for (let i = 0; i < priorityList.length; i++) {
+    if (priorityList[i].checked) {
+      return priorityList[i].getAttribute("label");
     }
   }
 };

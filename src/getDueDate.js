@@ -2,10 +2,7 @@
 
 import { dateToString } from "./dateToString.js";
 
-export const getDueDate = () => {
-  const dueDateNode = document.getElementsByClassName(
-    "form__input-due-date"
-  )[0];
+export const getDueDate = (dueDateNode) => {
   const dueDate = new Date(dueDateNode.value);
   return dateToString(dueDate);
 };

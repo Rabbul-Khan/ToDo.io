@@ -12,4 +12,12 @@ export const deleteTaskButton = () => {
     const taskToDelete = lastDeleteTaskButtonNode.parentElement;
     taskToDelete.remove();
   });
+
+  // for (let i = 0; i < deleteTaskButtonNode.length; i++) {
+  //   deleteTaskButtonNode[i].addEventListener("click", () => {
+  //     const taskToDelete = deleteTaskButtonNode[i].parentElement;
+  //     console.log(taskToDelete);
+  //     // taskToDelete.remove();
+  //   });
+  // }
 };

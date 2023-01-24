@@ -9,15 +9,18 @@ export const modalCancelButton = (className) => {
   if (className === "add-project-modal__btn-cancel") {
     modalCancelButtonNode = document.getElementsByClassName(
       "add-project-modal__btn-cancel"
-    )[0];
+    );
     classNameToggleModal = "sidebar__modal";
   } else if (className === "add-task-modal__btn-cancel") {
     modalCancelButtonNode = document.getElementsByClassName(
       "add-task-modal__btn-cancel"
-    )[0];
+    );
     classNameToggleModal = "main-container__modal";
   }
-  modalCancelButtonNode.addEventListener("click", () => {
-    toggleModal(classNameToggleModal);
-  });
+
+  for (let i = 0; i < modalCancelButtonNode.length; i++) {
+    modalCancelButtonNode[i].addEventListener("click", () => {
+      toggleModal(classNameToggleModal);
+    });
+  }
 };
