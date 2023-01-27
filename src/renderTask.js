@@ -1,6 +1,6 @@
 // Outputs the task title and description on the task list and sets the color according to the priority.
 
-export const renderTask = (title, description, priority) => {
+export const renderTask = (title, description, priority, id) => {
   const sideBarProjectContainerChildren = document.getElementsByClassName(
     "sidebar__project-container"
   )[0].children;

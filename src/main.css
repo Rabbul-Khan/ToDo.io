@@ -302,7 +302,7 @@ input:-webkit-autofill {
     margin: 2rem auto;
   }
 
-  .project-container__project-name {
+  .project-container__project-name-and-icon {
     color: var(--main-font-color);
     display: flex;
     padding: 1rem;
@@ -318,7 +318,7 @@ input:-webkit-autofill {
     background-color: var(--secondary-bg-color);
   }
 
-  .project-container__project.active .project-container__project-name {
+  .project-container__project.active .project-container__project-name-and-icon {
     color: var(--main-bg-color);
   }
 
