@@ -295,11 +295,11 @@ input:-webkit-autofill {
     display: block;
     background: var(--secondary-bg-color-lighter);
     min-height: calc(100vh - 60px);
+    padding: 0 2rem;
   }
 
   .sidebar__project-container {
-    max-width: 80%;
-    margin: 2rem auto;
+    margin: 1rem auto;
   }
 
   .project-container__project-name-and-icon {

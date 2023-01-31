@@ -26,6 +26,7 @@ export const renderTask = (title, description, priority, id) => {
         "icon",
         "material-icons"
       );
+      deleteIconNode.setAttribute("listener", "false");
       deleteIconNode.textContent = "delete";
 
       if (priority === "High") {

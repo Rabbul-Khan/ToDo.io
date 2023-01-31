@@ -17,7 +17,7 @@ export const renderProjectName = (projectName) => {
   projectIconNode.textContent = "pages";
 
   const nameNode = document.createElement("div");
-  nameNode.classList.add("project-container__project-name-and-icon");
+  nameNode.classList.add("project-container__project-name");
   nameNode.textContent = projectName;
 
   const deleteIconNode = document.createElement("span");
@@ -26,6 +26,7 @@ export const renderProjectName = (projectName) => {
     "icon",
     "material-icons"
   );
+  deleteIconNode.setAttribute("listener", "false");
   deleteIconNode.textContent = "delete";
 
   projectNameIconNode.append(projectIconNode, nameNode, deleteIconNode);

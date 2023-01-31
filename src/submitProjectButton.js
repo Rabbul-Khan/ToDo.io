@@ -1,6 +1,7 @@
 import { addProject } from "./addProject";
 import { toggleModal } from "./toggleModal";
 import { getProjectName } from "./getProjectName";
+import { deleteProjectButton } from "./deleteProjectButton";
 
 export const submitProjectButton = () => {
   const submitProjectButton = document.getElementsByClassName(
@@ -8,7 +9,11 @@ export const submitProjectButton = () => {
   )[0];
   submitProjectButton.addEventListener("click", () => {
     const projectName = getProjectName();
-    addProject(projectName);
+    const projectId = self.crypto.randomUUID();
+
+    addProject(projectName, projectId);
+
+    deleteProjectButton(projectId);
 
     toggleModal("sidebar__modal");
 

@@ -6,9 +6,12 @@ export const deleteTaskButton = () => {
   );
 
   for (let i = 0; i < deleteTaskButtonNode.length; i++) {
-    deleteTaskButtonNode[i].addEventListener("click", (event) => {
-      const taskToRemove = event.target.parentElement;
-      taskToRemove.remove();
-    });
+    if (deleteTaskButtonNode[i].getAttribute("listener") !== "true") {
+      deleteTaskButtonNode[i].addEventListener("click", (event) => {
+        const taskToRemove = event.target.parentElement;
+        taskToRemove.remove();
+      });
+      deleteTaskButtonNode[i].setAttribute("listener", "true");
+    }
   }
 };
