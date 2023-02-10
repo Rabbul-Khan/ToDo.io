@@ -19,6 +19,7 @@ export const submitTaskButton = () => {
     const taskName = modalContentNode.querySelector(
       ".form__input-task-name"
     ).value;
+
     const description = modalContentNode.querySelector(
       ".form__input-task-description"
     ).value;

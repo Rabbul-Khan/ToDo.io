@@ -9,6 +9,19 @@ export const deleteProjectButton = (projectId) => {
         const projectToRemove = event.target.closest(
           ".project-container__project"
         );
+
+        // if (projectToRemove.classList.contains("active")) {
+        // projectToRemove.classList.remove("active");
+        // const closestProjectFromProjectToRemove =
+        //   projectToRemove.previousSibling;
+        // closestProjectFromProjectToRemove.classList.add("active");
+        // console.log(closestProjectFromProjectToRemove);
+        // }
+        // projectToRemove.classList.remove("active");
+
+        // const inbox = document.getElementsByClassName("inbox")[0];
+        // inbox.classList.add("active");
+
         projectToRemove.remove();
         const taskListContainer = document.getElementsByClassName(
           "task-list-container"

@@ -105,12 +105,14 @@ body {
   font-weight: 500;
   flex: 1;
   min-height: 0;
+  overflow-wrap: break-word;
 }
 
 .task-container__task-description {
   font-size: 0.9rem;
   flex: 1;
   min-height: 0;
+  overflow-wrap: break-word;
 }
 
 .task-container__icons-delete {
@@ -288,7 +290,7 @@ input:-webkit-autofill {
 @media screen and (min-width: 800px) {
   .main-container {
     display: grid;
-    grid-template-columns: 300px auto;
+    grid-template-columns: 300px minmax(100px, 80%);
   }
 
   .main-container__sidebar {
