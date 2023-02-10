@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Rabbul-Khan/ToDo.io/issues"
   },
-  "homepage": "https://github.com/Rabbul-Khan/ToDo.io#readme",
+  "homepage": "https://github.com/Rabbul-Khan/ToDo.io",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.3",
