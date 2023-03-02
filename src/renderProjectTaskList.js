@@ -1,3 +1,5 @@
+import { setCurrentDate } from "./setCurrentDate";
+
 export const renderProjectTaskList = (projectId) => {
   const template = document.querySelector("template");
   const content = template.content.cloneNode(true);
@@ -10,6 +12,7 @@ export const renderProjectTaskList = (projectId) => {
   )[0];
 
   mainContentNode.appendChild(content);
+  setCurrentDate();
 
   // const projectTaskLists = mainContentNode.children;
   // for (let i = 0; i < projectTaskLists.length; i++) {

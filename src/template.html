@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="#" />
     <title>ToDo.io</title>
   </head>
   <body>
@@ -37,10 +38,7 @@
               <span class="sidebar__icon-inbox icon material-icons">
                 inbox
               </span>
-              <div class="sidebar__project-name">Inbox</div>
-              <!-- <span class="sidebar__icon-delete icon material-icons">
-                delete
-              </span> -->
+              <div class="project-container__project-name">Inbox</div>
             </div>
           </div>
         </div>
@@ -70,7 +68,7 @@
 
         <button class="add-project-btn btn add-btn">
           <div class="add-project-btn__icons-add icon material-icons"></div>
-          Add project
+          <div class="add-project-btn__text">Add project</div>
         </button>
       </div>
 
@@ -90,13 +88,18 @@
 
           <div class="modal main-container__modal">
             <div class="modal__content">
-              <form onsubmit="return false" class="modal__add-task-form form">
+              <form
+                onsubmit="return false"
+                class="modal__add-task-form form"
+                id="addTaskForm"
+              >
                 <!-- The onsubmit attribute prevents the page from reloading after submission -->
 
                 <input
                   type="text"
                   class="form__input-task-name input"
                   placeholder="Task name"
+                  required="required"
                 />
 
                 <textarea
@@ -136,6 +139,8 @@
                 </button>
                 <button
                   class="add-task-modal__btn-submit modal__btn-submit btn"
+                  type="submit"
+                  form="addTaskForm"
                 >
                   Submit
                 </button>
@@ -162,13 +167,18 @@
 
         <div class="modal main-container__modal">
           <div class="modal__content">
-            <form onsubmit="return false" class="modal__add-task-form form">
+            <form
+              onsubmit="return false"
+              class="modal__add-task-form form"
+              id="addTaskForm"
+            >
               <!-- The onsubmit attribute prevents the page from reloading after submission -->
 
               <input
                 type="text"
                 class="form__input-task-name input"
                 placeholder="Task name"
+                minlength="5"
               />
 
               <textarea
@@ -204,7 +214,11 @@
               <button class="add-task-modal__btn-cancel modal__btn-cancel btn">
                 Cancel
               </button>
-              <button class="add-task-modal__btn-submit modal__btn-submit btn">
+              <button
+                form="addTaskForm"
+                type="submit"
+                class="add-task-modal__btn-submit modal__btn-submit btn"
+              >
                 Submit
               </button>
             </div>

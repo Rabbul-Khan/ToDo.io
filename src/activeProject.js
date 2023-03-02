@@ -54,6 +54,13 @@ export const activeProject = () => {
       mainContainerMainContentNodeChildren[j].classList.remove("active");
     }
     latestTaskListContainer.classList.add("active");
+    // const mainContainerModalNodes = document.getElementsByClassName(
+    //   "main-container__modal"
+    // );
+
+    // for (let i = 0; i < mainContainerModalNodes.length; i++) {
+    //   mainContainerModalNodes[i].style.display = "none";
+    // }
   });
 };
 

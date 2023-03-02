@@ -19,8 +19,11 @@ export const modalCancelButton = (className) => {
   }
 
   for (let i = 0; i < modalCancelButtonNode.length; i++) {
-    modalCancelButtonNode[i].addEventListener("click", () => {
-      toggleModal(classNameToggleModal);
-    });
+    if (modalCancelButtonNode[i].getAttribute("listener") !== "true") {
+      modalCancelButtonNode[i].setAttribute("listener", "true");
+      modalCancelButtonNode[i].addEventListener("click", () => {
+        toggleModal(classNameToggleModal);
+      });
+    }
   }
 };

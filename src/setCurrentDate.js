@@ -1,4 +1,4 @@
-//Sets the current date on the homepage.
+//Sets the current date on all the project pages.
 
 import { dateToString } from "./dateToString";
 
@@ -7,6 +7,9 @@ export const setCurrentDate = () => {
   const currentDateString = dateToString(currentDate);
   const currentDateNode = document.getElementsByClassName(
     "date-container__current-date"
-  )[0];
-  currentDateNode.textContent = currentDateString;
+  );
+
+  for (let i = 0; i < currentDateNode.length; i++) {
+    currentDateNode[i].textContent = currentDateString;
+  }
 };

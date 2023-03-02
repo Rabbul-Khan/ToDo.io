@@ -1,6 +1,6 @@
 // Outputs the task title and description on the task list and sets the color according to the priority.
 
-export const renderTask = (title, description, priority, id) => {
+export const renderTask = (title, description, priority, dueDate) => {
   const sideBarProjectContainerChildren = document.getElementsByClassName(
     "sidebar__project-container"
   )[0].children;
@@ -14,11 +14,30 @@ export const renderTask = (title, description, priority, id) => {
 
       const titleNode = document.createElement("div");
       titleNode.classList.add("task-container__task-title");
-      titleNode.textContent = title;
+      if (title) {
+        titleNode.textContent = title;
+      } else {
+        titleNode.textContent = "No Title";
+      }
 
       const descriptionNode = document.createElement("div");
       descriptionNode.classList.add("task-container__task-description");
-      descriptionNode.textContent = description;
+      if (description) {
+        descriptionNode.textContent = description;
+      } else {
+        descriptionNode.textContent = "No description";
+      }
+
+      const dueDateAndDeleteNode = document.createElement("div");
+      dueDateAndDeleteNode.classList.add("task-container__due-date-and-delete");
+
+      const dueDateNode = document.createElement("div");
+      dueDateNode.classList.add("task-container__task-due-date");
+      if (dueDate === "Date undefined undefined") {
+        dueDateNode.textContent = "No due date set";
+      } else {
+        dueDateNode.textContent = `Due by ${dueDate}`;
+      }
 
       const deleteIconNode = document.createElement("div");
       deleteIconNode.classList.add(
@@ -37,7 +56,9 @@ export const renderTask = (title, description, priority, id) => {
         newTaskNode.classList.add("task-container__task-priority--low");
       }
 
-      newTaskNode.append(titleNode, descriptionNode, deleteIconNode);
+      dueDateAndDeleteNode.append(dueDateNode, deleteIconNode);
+
+      newTaskNode.append(titleNode, descriptionNode, dueDateAndDeleteNode);
       taskContainerNode.appendChild(newTaskNode);
     }
   }

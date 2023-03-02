@@ -21,10 +21,16 @@
 /* This selector sets the style on every element */
 html * {
   font-family: "Roboto", sans-serif;
+  font-size: calc(15px + 0.390625vw);
 }
 
 body {
   background: var(--main-bg-color);
+}
+
+.icon {
+  user-select: none;
+  cursor: pointer;
 }
 
 .nav {
@@ -32,6 +38,10 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 1rem 1.5rem;
+}
+
+.nav .icon:hover {
+  color: var(--main-bg-color);
 }
 
 .nav__icons-left-container > * {
@@ -42,22 +52,84 @@ body {
   padding-left: 1rem;
 }
 
-.icon {
-  user-select: none;
-}
-
 .main-container {
   display: flex;
 }
 
 .main-container__sidebar {
+  display: block;
+  background: var(--secondary-bg-color-lighter);
+  min-height: calc(100vh - 60px);
+  padding: 0 1rem;
+  width: 300px;
+  max-width: calc(100%-2rem);
+}
+
+.sidebar__project-container {
+  margin: 1rem auto;
+}
+
+.project-container__project-name-and-icon {
+  color: var(--main-font-color);
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: normal;
+  cursor: pointer;
+  user-select: none;
+  word-break: break-word;
+}
+
+.sidebar__icon-inbox,
+.sidebar__icon-project {
   display: none;
 }
 
+.sidebar__project-container .icon {
+  font-size: 0.75rem;
+}
+
+.add-project-btn__icons-add {
+  font-size: 1rem;
+}
+
+.add-project-btn__text {
+  font-size: 0.85rem;
+}
+
+.project-container__project.active {
+  background-color: var(--secondary-bg-color);
+}
+
+.project-container__project.active .project-container__project-name-and-icon {
+  color: var(--main-bg-color);
+}
+
+.project-container__project-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.sidebar__icon-delete {
+  margin-left: auto;
+}
+
+.sidebar__icon-delete:hover {
+  color: rgb(202, 90, 90);
+}
+
+.form__input-project-name {
+  background: var(--secondary-bg-color-lighter);
+  margin: 0.5rem;
+  font-size: 0.75rem;
+}
+
 .main-container__main-content {
-  width: 100%;
   margin: 3.75rem auto;
-  padding: 0 min(20rem, 15%);
+  padding: 0 5%;
+  max-width: 90%;
+  min-width: 70%;
 }
 
 .task-list-container {
@@ -71,7 +143,7 @@ body {
 .date-container {
   display: flex;
   padding-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .date-container__today-day {
@@ -102,24 +174,41 @@ body {
 }
 
 .task-container__task-title {
+  font-size: 0.85rem;
   font-weight: 500;
-  flex: 1;
+  /* flex: 1; */
   min-height: 0;
   overflow-wrap: break-word;
 }
 
 .task-container__task-description {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   flex: 1;
   min-height: 0;
   overflow-wrap: break-word;
 }
 
+.task-container__due-date-and-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-container__task-due-date {
+  font-size: 0.7rem;
+  font-style: italic;
+  margin-top: 0.125rem;
+  font-weight: 300;
+}
+
 .task-container__icons-delete {
-  flex: 1;
+  /* flex: 1; */
   min-height: 0;
   align-self: flex-end;
   cursor: pointer;
+}
+
+.task-container__icons-delete:hover {
+  color: var(--secondary-bg-color);
 }
 
 .task-container__task-priority--high {
@@ -176,8 +265,9 @@ body {
   border: 1px solid var(--main-font-color);
 }
 
-.form > * {
+.modal__add-task-form > * {
   margin: 1rem 1rem 0 1rem;
+  font-size: 0.75rem;
 }
 
 .form__input-task-name:focus,
@@ -200,6 +290,10 @@ input:-webkit-autofill {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.form__sub-container > * {
+  font-size: 0.75rem;
 }
 
 .form__input-due-date {
@@ -265,6 +359,7 @@ input:-webkit-autofill {
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   color: white;
+  font-size: 0.65rem;
 }
 
 .modal__btn-submit {
@@ -288,48 +383,72 @@ input:-webkit-autofill {
 }
 
 @media screen and (min-width: 800px) {
+  .nav__icons-menu {
+    display: none;
+  }
+
   .main-container {
     display: grid;
     grid-template-columns: 300px minmax(100px, 80%);
+    font-size: 1.5rem;
   }
 
   .main-container__sidebar {
     display: block;
-    background: var(--secondary-bg-color-lighter);
-    min-height: calc(100vh - 60px);
-    padding: 0 2rem;
+    padding: 1rem;
   }
 
-  .sidebar__project-container {
-    margin: 1rem auto;
+  .sidebar__icon-inbox {
+    display: inline;
   }
 
   .project-container__project-name-and-icon {
-    color: var(--main-font-color);
-    display: flex;
     padding: 1rem;
-    align-items: center;
     gap: 0.75rem;
-    font-size: 1.15rem;
-    font-weight: medium;
-    cursor: pointer;
-    user-select: none;
   }
 
   .project-container__project.active {
     background-color: var(--secondary-bg-color);
+    border-radius: var(--border-rad);
   }
 
-  .project-container__project.active .project-container__project-name-and-icon {
-    color: var(--main-bg-color);
+  .project-container__project-name {
+    font-size: 1.15rem;
   }
 
-  .sidebar__modal {
-    display: none;
+  .sidebar__project-container .icon {
+    font-size: 1.25rem;
   }
 
-  .form__input-project-name {
-    background: var(--secondary-bg-color-lighter);
-    margin: 0.5rem;
+  .sidebar__icon-project {
+    display: inline;
+  }
+
+  .add-project-btn__icons-add {
+    font-size: 1.5rem;
+  }
+
+  .add-project-btn__text {
+    font-size: 1.15rem;
+  }
+
+  .modal__btn-container .btn {
+    font-size: 0.85rem;
+  }
+
+  .main-container__main-content {
+    width: 100%;
+  }
+
+  .task-container__task-title {
+    font-size: 1.15rem;
+  }
+
+  .task-container__task-description {
+    font-size: 0.9rem;
+  }
+
+  .task-container__task-due-date {
+    font-size: 0.8rem;
   }
 }

@@ -9,8 +9,8 @@ export const submitProjectButton = () => {
   )[0];
   submitProjectButton.addEventListener("click", () => {
     const projectName = getProjectName();
-    const projectId = self.crypto.randomUUID();
-
+    const projectId =
+      Date.now().toString(36) + Math.random().toString(36).substring(2);
     addProject(projectName, projectId);
 
     deleteProjectButton(projectId);

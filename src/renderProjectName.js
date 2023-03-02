@@ -14,7 +14,7 @@ export const renderProjectName = (projectName) => {
     "icon",
     "material-icons"
   );
-  projectIconNode.textContent = "pages";
+  projectIconNode.textContent = "radio_button_checked";
 
   const nameNode = document.createElement("div");
   nameNode.classList.add("project-container__project-name");
