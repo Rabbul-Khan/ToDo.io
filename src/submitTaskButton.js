@@ -1,11 +1,9 @@
 // Once the submit button is clicked, the new task is created and the form modal is closed.
 import { getDueDate } from "./getDueDate";
 import { getPriority } from "./getPriority";
-import { addTask } from "./addTask";
 import { toggleModal } from "./toggleModal";
-import { deleteTaskButton } from "./deleteTaskButton";
 
-export const submitTaskButton = () => {
+export const submitTaskButton = (onSubmit) => {
   const submitButton = document.getElementsByClassName(
     "add-task-modal__btn-submit"
   );
@@ -34,10 +32,18 @@ export const submitTaskButton = () => {
     );
     const priority = getPriority(priorityList);
 
-    addTask(taskName, description, dueDate, priority);
+    const tagsInput = modalContentNode.querySelector(".form__input-task-tags");
+    const tags = tagsInput ? tagsInput.value : "";
 
-    // Add event listener to the delete button.
-    deleteTaskButton();
+    if (typeof onSubmit === "function") {
+      onSubmit({
+        title: taskName,
+        description,
+        dueDate,
+        priority,
+        tags,
+      });
+    }
 
     toggleModal("main-container__modal");
 

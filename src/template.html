@@ -79,6 +79,42 @@
             <div class="date-container__current-date"></div>
           </div>
 
+          <div class="task-list__header">
+            <div class="task-list__title">Inbox</div>
+            <button class="task-list__clear-completed btn" type="button">
+              Clear completed
+            </button>
+          </div>
+
+          <div class="task-list__filters">
+            <div class="task-list__filter-tabs">
+              <button class="task-list__filter-tab btn" data-filter="all">
+                All
+              </button>
+              <button class="task-list__filter-tab btn" data-filter="active">
+                Active
+              </button>
+              <button
+                class="task-list__filter-tab btn"
+                data-filter="completed"
+              >
+                Completed
+              </button>
+            </div>
+            <input
+              type="text"
+              class="task-list__search input"
+              placeholder="Search tasks"
+            />
+            <input
+              type="text"
+              class="task-list__tag-filter input"
+              placeholder="Filter by tag"
+            />
+          </div>
+
+          <div class="task-list__empty">No tasks yet</div>
+
           <div class="task-container"></div>
 
           <button class="add-task-btn btn">
@@ -106,6 +142,12 @@
                   class="form__input-task-description input"
                   placeholder="Description"
                 ></textarea>
+
+                <input
+                  type="text"
+                  class="form__input-task-tags input"
+                  placeholder="Tags (comma separated)"
+                />
 
                 <div class="form__sub-container">
                   <input type="date" class="form__input-due-date input" />
@@ -158,6 +200,42 @@
           <div class="date-container__current-date"></div>
         </div>
 
+        <div class="task-list__header">
+          <div class="task-list__title">Inbox</div>
+          <button class="task-list__clear-completed btn" type="button">
+            Clear completed
+          </button>
+        </div>
+
+        <div class="task-list__filters">
+          <div class="task-list__filter-tabs">
+            <button class="task-list__filter-tab btn" data-filter="all">
+              All
+            </button>
+            <button class="task-list__filter-tab btn" data-filter="active">
+              Active
+            </button>
+            <button
+              class="task-list__filter-tab btn"
+              data-filter="completed"
+            >
+              Completed
+            </button>
+          </div>
+          <input
+            type="text"
+            class="task-list__search input"
+            placeholder="Search tasks"
+          />
+          <input
+            type="text"
+            class="task-list__tag-filter input"
+            placeholder="Filter by tag"
+          />
+        </div>
+
+        <div class="task-list__empty">No tasks yet</div>
+
         <div class="task-container"></div>
 
         <button class="add-task-btn btn">
@@ -185,6 +263,12 @@
                 class="form__input-task-description input"
                 placeholder="Description"
               ></textarea>
+
+              <input
+                type="text"
+                class="form__input-task-tags input"
+                placeholder="Tags (comma separated)"
+              />
 
               <div class="form__sub-container">
                 <input type="date" class="form__input-due-date input" />

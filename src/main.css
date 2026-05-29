@@ -164,6 +164,70 @@ body {
   flex-direction: column;
 }
 
+.task-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.task-list__title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.task-list__filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.task-list__filter-tabs {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.task-list__filter-tab {
+  background: var(--secondary-bg-color-lighter);
+  border-radius: var(--border-rad);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.7rem;
+}
+
+.task-list__filter-tab.is-active {
+  background: var(--secondary-bg-color);
+  color: var(--main-bg-color);
+}
+
+.task-list__search,
+.task-list__tag-filter {
+  border: 1px solid var(--main-font-color-light);
+  border-radius: var(--border-rad);
+  padding: 0.35rem 0.5rem;
+  font-size: 0.7rem;
+}
+
+.task-list__clear-completed {
+  background: var(--main-font-color-light);
+  color: white;
+  font-size: 0.65rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--border-rad);
+}
+
+.task-list__clear-completed:hover {
+  background: #888888;
+}
+
+.task-list__empty {
+  font-size: 0.7rem;
+  color: var(--main-font-color-light);
+  margin-bottom: 0.5rem;
+}
+
 .task-container__task {
   display: flex;
   flex-direction: column;
@@ -171,6 +235,16 @@ body {
   margin-bottom: 0.5rem;
   border-radius: var(--border-rad);
   gap: 0.25rem;
+}
+
+.task-container__task-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-container__toggle {
+  cursor: pointer;
 }
 
 .task-container__task-title {
@@ -186,6 +260,25 @@ body {
   flex: 1;
   min-height: 0;
   overflow-wrap: break-word;
+}
+
+.task-container__task--completed .task-container__task-title,
+.task-container__task--completed .task-container__task-description {
+  text-decoration: line-through;
+  color: var(--main-font-color-light);
+}
+
+.task-container__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.task-container__tag {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.6rem;
 }
 
 .task-container__due-date-and-delete {
@@ -279,6 +372,10 @@ body {
 
 .form__input-task-description {
   resize: none;
+}
+
+.form__input-task-tags {
+  font-size: 0.75rem;
 }
 
 /* this is to remove a preset style */

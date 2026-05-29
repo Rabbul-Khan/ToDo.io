@@ -1,19 +1,16 @@
-import { addProject } from "./addProject";
 import { toggleModal } from "./toggleModal";
 import { getProjectName } from "./getProjectName";
-import { deleteProjectButton } from "./deleteProjectButton";
 
-export const submitProjectButton = () => {
+export const submitProjectButton = (onSubmit) => {
   const submitProjectButton = document.getElementsByClassName(
     "add-project-modal__btn-submit"
   )[0];
   submitProjectButton.addEventListener("click", () => {
     const projectName = getProjectName();
-    const projectId =
-      Date.now().toString(36) + Math.random().toString(36).substring(2);
-    addProject(projectName, projectId);
 
-    deleteProjectButton(projectId);
+    if (typeof onSubmit === "function") {
+      onSubmit(projectName);
+    }
 
     toggleModal("sidebar__modal");
 
