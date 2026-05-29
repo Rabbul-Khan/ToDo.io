@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Geist:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="#" />
@@ -32,6 +32,31 @@
 
     <main class="main-container">
       <div class="main-container__sidebar">
+        <div class="sidebar__header">
+          <div class="sidebar__title">Personal Space</div>
+          <div class="sidebar__subtitle">Productivity Workspace</div>
+        </div>
+
+        <div class="sidebar__nav">
+          <button class="sidebar__nav-item is-active btn" type="button">
+            <span class="sidebar__nav-icon icon material-icons">inbox</span>
+            Inbox
+          </button>
+          <button class="sidebar__nav-item btn" type="button">
+            <span class="sidebar__nav-icon icon material-icons">today</span>
+            Today
+          </button>
+          <button class="sidebar__nav-item btn" type="button">
+            <span class="sidebar__nav-icon icon material-icons">event_note</span>
+            Upcoming
+          </button>
+          <button class="sidebar__nav-item btn" type="button">
+            <span class="sidebar__nav-icon icon material-icons">folder</span>
+            Projects
+          </button>
+        </div>
+
+        <div class="sidebar__section-title">My Projects</div>
         <div class="sidebar__project-container">
           <div class="project-container__project active inbox">
             <div class="project-container__project-name-and-icon">
@@ -70,6 +95,17 @@
           <div class="add-project-btn__icons-add icon material-icons"></div>
           <div class="add-project-btn__text">Add project</div>
         </button>
+
+        <div class="sidebar__footer">
+          <button class="sidebar__nav-item btn" type="button">
+            <span class="sidebar__nav-icon icon material-icons">help</span>
+            Help
+          </button>
+          <button class="sidebar__nav-item btn" type="button">
+            <span class="sidebar__nav-icon icon material-icons">archive</span>
+            Archive
+          </button>
+        </div>
       </div>
 
       <div class="main-container__main-content">
@@ -102,21 +138,32 @@
                   Completed
                 </button>
               </div>
-              <input
-                type="text"
-                class="task-list__search input"
-                placeholder="Search tasks"
-              />
-              <input
-                type="text"
-                class="task-list__tag-filter input"
-                placeholder="Filter by tag"
-              />
+              <div class="task-list__input-group">
+                <span class="task-list__input-icon icon material-icons">
+                  search
+                </span>
+                <input
+                  type="text"
+                  class="task-list__search input"
+                  placeholder="Search tasks"
+                />
+              </div>
+              <div class="task-list__input-group">
+                <span class="task-list__input-icon icon material-icons">
+                  filter_list
+                </span>
+                <input
+                  type="text"
+                  class="task-list__tag-filter input"
+                  placeholder="Filter by tag"
+                />
+              </div>
             </div>
 
-            <div class="task-list__empty">No tasks yet</div>
-
-            <div class="task-container"></div>
+            <div class="task-list__panel">
+              <div class="task-list__empty">No tasks yet</div>
+              <div class="task-container"></div>
+            </div>
 
             <button class="add-task-btn btn">
               <div class="add-task-btn__icons-add icon material-icons"></div>
@@ -225,21 +272,32 @@
                 Completed
               </button>
             </div>
-            <input
-              type="text"
-              class="task-list__search input"
-              placeholder="Search tasks"
-            />
-            <input
-              type="text"
-              class="task-list__tag-filter input"
-              placeholder="Filter by tag"
-            />
+            <div class="task-list__input-group">
+              <span class="task-list__input-icon icon material-icons">
+                search
+              </span>
+              <input
+                type="text"
+                class="task-list__search input"
+                placeholder="Search tasks"
+              />
+            </div>
+            <div class="task-list__input-group">
+              <span class="task-list__input-icon icon material-icons">
+                filter_list
+              </span>
+              <input
+                type="text"
+                class="task-list__tag-filter input"
+                placeholder="Filter by tag"
+              />
+            </div>
           </div>
 
-          <div class="task-list__empty">No tasks yet</div>
-
-          <div class="task-container"></div>
+          <div class="task-list__panel">
+            <div class="task-list__empty">No tasks yet</div>
+            <div class="task-container"></div>
+          </div>
 
           <button class="add-task-btn btn">
             <div class="add-task-btn__icons-add icon material-icons"></div>
