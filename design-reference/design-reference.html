@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="antialiased text-on-surface bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FocusFlow - Inbox</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#fefcff",
+                        "surface-container-high": "#e8e8e8",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f1f1f1",
+                        "inverse-primary": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-tertiary-container": "#868382",
+                        "surface-tint": "#5f5e5e",
+                        "outline-variant": "#c4c7c7",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "primary": "#000000",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1c1b1b",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-secondary-fixed": "#00174b",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#dbe1ff",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#444748",
+                        "tertiary-fixed": "#e6e2df",
+                        "tertiary": "#000000",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#0051d5",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "on-primary-container": "#858383",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "secondary-container": "#316bf3",
+                        "tertiary-container": "#1c1b1a",
+                        "on-error": "#ffffff",
+                        "outline": "#747878",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "48px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Geist"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e2e2;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c4c7c7;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface text-primary font-headline-md text-headline-md docked full-width top-0 border-b border-outline-variant flex justify-between items-center h-16 px-6 w-full sticky top-0 z-50">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors cursor-pointer p-2 rounded-full" data-icon="home">home</span>
+<span class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors cursor-pointer p-2 rounded-full" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer p-2 rounded-full hover:bg-surface-container-low" data-icon="add">add</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer p-2 rounded-full hover:bg-surface-container-low" data-icon="person">person</span>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low text-primary font-body-md text-body-md h-screen w-60 fixed md:relative left-0 top-0 md:top-auto flex flex-col py-6 px-3 border-r border-outline-variant z-40 hidden md:flex">
+<div class="mb-8 px-4">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-1">Personal Space</div>
+<div class="text-on-surface-variant text-sm">Productivity Workspace</div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-4 py-2 bg-primary-container text-on-primary-container rounded-lg border-l-2 border-primary hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined filled" data-icon="inbox">inbox</span>
+<span>Inbox</span>
+</a>
+<!-- Inactive Items -->
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Today</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span>Upcoming</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+<span>Projects</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-1 pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span>Archive</span>
+</a>
+<button class="mt-4 flex items-center justify-center gap-2 w-full py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                    New Project
+                </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12 bg-[#F4F6F8]">
+<div class="max-w-[800px] mx-auto">
+<!-- Content Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.04)] border border-outline-variant overflow-hidden">
+<!-- Header Section -->
+<div class="p-6 lg:p-8 border-b border-outline-variant/50">
+<div class="flex items-baseline gap-3 mb-6">
+<span class="font-body-md text-body-md font-semibold text-primary">Today</span>
+<span class="font-body-md text-body-md text-on-surface-variant">May 30 2026</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<h1 class="font-headline-lg text-headline-lg text-primary">Inbox</h1>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+                                Clear completed
+                            </button>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-col md:flex-row gap-4 mb-2">
+<div class="flex gap-2 bg-surface-container p-1 rounded-lg w-fit">
+<button class="px-3 py-1 bg-primary text-on-primary rounded-md font-label-md text-label-md shadow-sm">All</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary rounded-md font-label-md text-label-md transition-colors">Active</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary rounded-md font-label-md text-label-md transition-colors">Completed</button>
+</div>
+<div class="flex-1 flex gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-primary placeholder-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search tasks" type="text"/>
+</div>
+<div class="relative w-48 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" data-icon="filter_list">filter_list</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-primary placeholder-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Filter by tag" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- List Area -->
+<div class="p-6 lg:p-8 bg-surface border-b border-outline-variant/50 min-h-[120px] flex items-center justify-center">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-outline mb-2 block" data-icon="inventory_2">inventory_2</span>
+<p class="font-body-md text-body-md text-on-surface-variant">No tasks yet</p>
+</div>
+</div>
+<!-- Task Creation Form -->
+<div class="p-6 lg:p-8 bg-surface-container-lowest">
+<div class="border border-outline-variant rounded-xl p-6 bg-surface-container-lowest shadow-sm">
+<form>
+<div class="space-y-4">
+<input class="w-full px-4 py-2 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-primary placeholder-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Task name" type="text"/>
+<input class="w-full px-4 py-2 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-primary placeholder-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Description" type="text"/>
+<input class="w-full px-4 py-2 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-primary placeholder-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Tags (comma separated)" type="text"/>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<div class="relative">
+<input class="pl-4 pr-10 py-2 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all cursor-pointer" type="date"/>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Priority:</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant text-on-surface-variant hover:bg-surface-container-low rounded-full font-label-md text-label-md transition-colors" type="button">High</button>
+<button class="px-3 py-1 bg-[#FFFBE6] text-[#D4B106] border border-[#FFE58F] rounded-full font-label-md text-label-md transition-colors" type="button">Mid</button>
+<button class="px-3 py-1 border border-outline-variant text-on-surface-variant hover:bg-surface-container-low rounded-full font-label-md text-label-md transition-colors" type="button">Low</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 mt-8 pt-6 border-t border-outline-variant/50">
+<button class="px-5 py-2 border border-outline-variant text-on-surface-variant hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" type="button">
+                                        Cancel
+                                    </button>
+<button class="px-5 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity shadow-sm" type="submit">
+                                        Submit
+                                    </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
