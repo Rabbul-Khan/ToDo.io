@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="#" />
@@ -24,6 +24,7 @@
         <div class="nav__icons-home icon material-icons">home</div>
         <div class="nav__icons-search icon material-icons">search</div>
       </div>
+      <div class="nav__brand">ToDo.io</div>
       <div class="nav__icons-right-container">
         <div class="nav__icons-add icon material-icons">add</div>
         <div class="nav__icons-person icon material-icons">person</div>
@@ -42,18 +43,6 @@
             <span class="sidebar__nav-icon icon material-icons">inbox</span>
             Inbox
           </button>
-          <button class="sidebar__nav-item btn" type="button">
-            <span class="sidebar__nav-icon icon material-icons">today</span>
-            Today
-          </button>
-          <button class="sidebar__nav-item btn" type="button">
-            <span class="sidebar__nav-icon icon material-icons">event_note</span>
-            Upcoming
-          </button>
-          <button class="sidebar__nav-item btn" type="button">
-            <span class="sidebar__nav-icon icon material-icons">folder</span>
-            Projects
-          </button>
         </div>
 
         <div class="sidebar__section-title">My Projects</div>
@@ -67,6 +56,7 @@
             </div>
           </div>
         </div>
+        
         <div class="modal sidebar__modal">
           <div class="modal__content">
             <form onsubmit="return false" class="modal__add-project-form form">
@@ -111,13 +101,15 @@
       <div class="main-container__main-content">
         <div class="content-shell">
           <div class="task-list-container active">
-            <div class="date-container">
-              <div class="date-container__today-day">Today</div>
-              <div class="date-container__current-date"></div>
-            </div>
-
-            <div class="task-list__header">
-              <div class="task-list__title">Inbox</div>
+            
+            <div class="task-list__header-row">
+              <div class="task-list__title-area">
+                <div class="date-container">
+                  <div class="date-container__today-day">Today</div>
+                  <div class="date-container__current-date"></div>
+                </div>
+                <h1 class="task-list__title">Inbox</h1>
+              </div>
               <button class="task-list__clear-completed btn" type="button">
                 Clear completed
               </button>
@@ -138,25 +130,28 @@
                   Completed
                 </button>
               </div>
-              <div class="task-list__input-group">
-                <span class="task-list__input-icon icon material-icons">
-                  search
-                </span>
-                <input
-                  type="text"
-                  class="task-list__search input"
-                  placeholder="Search tasks"
-                />
-              </div>
-              <div class="task-list__input-group">
-                <span class="task-list__input-icon icon material-icons">
-                  filter_list
-                </span>
-                <input
-                  type="text"
-                  class="task-list__tag-filter input"
-                  placeholder="Filter by tag"
-                />
+              
+              <div class="task-list__search-filter-group">
+                <div class="task-list__input-group">
+                  <span class="task-list__input-icon icon material-icons">
+                    search
+                  </span>
+                  <input
+                    type="text"
+                    class="task-list__search input"
+                    placeholder="Search tasks"
+                  />
+                </div>
+                <div class="task-list__input-group">
+                  <span class="task-list__input-icon icon material-icons">
+                    filter_list
+                  </span>
+                  <input
+                    type="text"
+                    class="task-list__tag-filter input"
+                    placeholder="Filter by tag"
+                  />
+                </div>
               </div>
             </div>
 
@@ -177,48 +172,65 @@
                   class="modal__add-task-form form"
                   id="addTaskForm"
                 >
-                  <!-- The onsubmit attribute prevents the page from reloading after submission -->
+                  <div class="form__field">
+                    <input
+                      type="text"
+                      class="form__input-task-name input"
+                      placeholder="Task name"
+                      required="required"
+                    />
+                  </div>
 
-                  <input
-                    type="text"
-                    class="form__input-task-name input"
-                    placeholder="Task name"
-                    required="required"
-                  />
+                  <div class="form__field">
+                    <textarea
+                      class="form__input-task-description input"
+                      placeholder="Description"
+                    ></textarea>
+                  </div>
 
-                  <textarea
-                    class="form__input-task-description input"
-                    placeholder="Description"
-                  ></textarea>
-
-                  <input
-                    type="text"
-                    class="form__input-task-tags input"
-                    placeholder="Tags (comma separated)"
-                  />
+                  <div class="form__field">
+                    <input
+                      type="text"
+                      class="form__input-task-tags input"
+                      placeholder="Tags (comma separated)"
+                    />
+                  </div>
 
                   <div class="form__sub-container">
-                    <input type="date" class="form__input-due-date input" />
+                    <div class="form__date-wrapper">
+                      <input type="date" class="form__input-due-date input" />
+                    </div>
 
-                    <input
-                      label="High"
-                      type="radio"
-                      class="form__input-priority--high form__input-priority high"
-                      name="priority"
-                    />
-                    <input
-                      label="Mid"
-                      type="radio"
-                      class="form__input-priority--mid form__input-priority mid"
-                      name="priority"
-                      checked="true"
-                    />
-                    <input
-                      label="Low"
-                      type="radio"
-                      class="form__input-priority--low form__input-priority low"
-                      name="priority"
-                    />
+                    <div class="priority-selector-wrapper">
+                      <label class="priority-capsule high">
+                        <input
+                          label="High"
+                          type="radio"
+                          class="form__input-priority--high form__input-priority"
+                          name="priority"
+                        />
+                        <span class="priority-capsule__label">High</span>
+                      </label>
+                      <label class="priority-capsule mid">
+                        <input
+                          label="Mid"
+                          type="radio"
+                          class="form__input-priority--mid form__input-priority"
+                          name="priority"
+                          checked="true"
+                        />
+                        <span class="priority-capsule__label">Mid</span>
+                      </label>
+                      <label class="priority-capsule low">
+                        <input
+                          label="Low"
+                          type="radio"
+                          class="form__input-priority--low form__input-priority"
+                          name="priority"
+                        />
+                        <span class="priority-capsule__label">Low</span>
+                      </label>
+                    </div>
                   </div>
                 </form>
                 <div class="modal__btn-container">
@@ -245,13 +257,15 @@
     <template>
       <div class="content-shell">
         <div class="task-list-container">
-          <div class="date-container">
-            <div class="date-container__today-day">Today</div>
-            <div class="date-container__current-date"></div>
-          </div>
-
-          <div class="task-list__header">
-            <div class="task-list__title">Inbox</div>
+          
+          <div class="task-list__header-row">
+            <div class="task-list__title-area">
+              <div class="date-container">
+                <div class="date-container__today-day">Today</div>
+                <div class="date-container__current-date"></div>
+              </div>
+              <h1 class="task-list__title">Inbox</h1>
+            </div>
             <button class="task-list__clear-completed btn" type="button">
               Clear completed
             </button>
@@ -272,25 +286,28 @@
                 Completed
               </button>
             </div>
-            <div class="task-list__input-group">
-              <span class="task-list__input-icon icon material-icons">
-                search
-              </span>
-              <input
-                type="text"
-                class="task-list__search input"
-                placeholder="Search tasks"
-              />
-            </div>
-            <div class="task-list__input-group">
-              <span class="task-list__input-icon icon material-icons">
-                filter_list
-              </span>
-              <input
-                type="text"
-                class="task-list__tag-filter input"
-                placeholder="Filter by tag"
-              />
+            
+            <div class="task-list__search-filter-group">
+              <div class="task-list__input-group">
+                <span class="task-list__input-icon icon material-icons">
+                  search
+                </span>
+                <input
+                  type="text"
+                  class="task-list__search input"
+                  placeholder="Search tasks"
+                />
+              </div>
+              <div class="task-list__input-group">
+                <span class="task-list__input-icon icon material-icons">
+                  filter_list
+                </span>
+                <input
+                  type="text"
+                  class="task-list__tag-filter input"
+                  placeholder="Filter by tag"
+                />
+              </div>
             </div>
           </div>
 
@@ -311,48 +328,65 @@
                 class="modal__add-task-form form"
                 id="addTaskForm"
               >
-                <!-- The onsubmit attribute prevents the page from reloading after submission -->
+                <div class="form__field">
+                  <input
+                    type="text"
+                    class="form__input-task-name input"
+                    placeholder="Task name"
+                    required="required"
+                  />
+                </div>
 
-                <input
-                  type="text"
-                  class="form__input-task-name input"
-                  placeholder="Task name"
-                  minlength="5"
-                />
+                <div class="form__field">
+                  <textarea
+                    class="form__input-task-description input"
+                    placeholder="Description"
+                  ></textarea>
+                </div>
 
-                <textarea
-                  class="form__input-task-description input"
-                  placeholder="Description"
-                ></textarea>
-
-                <input
-                  type="text"
-                  class="form__input-task-tags input"
-                  placeholder="Tags (comma separated)"
-                />
+                <div class="form__field">
+                  <input
+                    type="text"
+                    class="form__input-task-tags input"
+                    placeholder="Tags (comma separated)"
+                  />
+                </div>
 
                 <div class="form__sub-container">
-                  <input type="date" class="form__input-due-date input" />
+                  <div class="form__date-wrapper">
+                    <input type="date" class="form__input-due-date input" />
+                  </div>
 
-                  <input
-                    label="High"
-                    type="radio"
-                    class="form__input-priority--high form__input-priority high"
-                    name="priority"
-                  />
-                  <input
-                    label="Mid"
-                    type="radio"
-                    class="form__input-priority--mid form__input-priority mid"
-                    name="priority"
-                    checked="true"
-                  />
-                  <input
-                    label="Low"
-                    type="radio"
-                    class="form__input-priority--low form__input-priority low"
-                    name="priority"
-                  />
+                  <div class="priority-selector-wrapper">
+                    <label class="priority-capsule high">
+                      <input
+                        label="High"
+                        type="radio"
+                        class="form__input-priority--high form__input-priority"
+                        name="priority"
+                      />
+                      <span class="priority-capsule__label">High</span>
+                    </label>
+                    <label class="priority-capsule mid">
+                      <input
+                        label="Mid"
+                        type="radio"
+                        class="form__input-priority--mid form__input-priority"
+                        name="priority"
+                        checked="true"
+                      />
+                      <span class="priority-capsule__label">Mid</span>
+                    </label>
+                    <label class="priority-capsule low">
+                      <input
+                        label="Low"
+                        type="radio"
+                        class="form__input-priority--low form__input-priority"
+                        name="priority"
+                      />
+                      <span class="priority-capsule__label">Low</span>
+                    </label>
+                  </div>
                 </div>
               </form>
               <div class="modal__btn-container">
@@ -362,9 +396,9 @@
                   Cancel
                 </button>
                 <button
-                  form="addTaskForm"
-                  type="submit"
                   class="add-task-modal__btn-submit modal__btn-submit btn"
+                  type="submit"
+                  form="addTaskForm"
                 >
                   Submit
                 </button>
